@@ -1,0 +1,28 @@
+<배운점>
+-switch문
+가능한 실행경로가 여러개일경우 용이하다.
+-HDC hdc = GetWindowDC(GetForegroundWindow())
+사각형과 원을 그리기위한 것이다.
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+#include <Windows.h> 
+
+main() {
+	HDC hdc = GetWindowDC(GetForegroundWindow());
+	char command;
+	printf("r과 c 중 하나를 입력하십시오: ");
+	command = getchar();
+	switch (command)
+	{
+	case 'r':
+		Rectangle(hdc, 100, 100, 200, 200);
+		break;
+	case 'c':
+		Ellipse(hdc, 100, 100, 200, 200);
+		break;
+	default:
+		printf("정해지지 않은 문자입니다.\n");
+		break;
+	}
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------
