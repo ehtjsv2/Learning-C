@@ -1,1 +1,22 @@
+-Sleep(1000)
+1초간 wait. (1000=1초)
+Visual C/C++에서 wait하기위해 Sleep()을 추천하지만
+다른곳에서는 다른함수를 사용할 수 있다.
 
+-콘솔 좌표체계
+콘솔의 좌표체계는 좌상단이 0,0 이며 우하단으로 갈수록 증가한다.
+
+-HDC hdc =GetWindowDC(GetForegroundWindow());
+좌표체계를 사용하려면 기본적으로 HDC형 hdc변수를 만들고시작한다.
+
+-MoveToEx(hdc,x,y,NULL);
+좌표이동
+
+-LineTo(hdc,x,y)
+현재좌표에서 x,y까지 직선을 그린다.
+
+-Ellipse(hdc,x,y,x+dx,y+dy)
+원을 그려준다.
+
+-Rectangle(hdc, x,y,x+dx,y+dy)
+사각형을 그려준다.
