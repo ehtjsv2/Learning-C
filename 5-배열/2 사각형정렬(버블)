@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<windows.h>
+#include<stdlib.h>
+
+main() {
+	HDC hdc = GetWindowDC(GetForegroundWindow());
+	int arr[10],tmp;
+	int x = 50, y = 400;
+	int dx = 30;
+	srand(time(NULL));
+	for (int i = 0; i < 10; i++) {
+		arr[i] = rand() % 100;
+	}
+	for (int j = 9; j >=1; j--) {
+		for (int i = 0; i < j; i++) {
+			if (arr[i] > arr[i + 1]) {
+				tmp = arr[i];
+				arr[i] = arr[i + 1];
+				arr[i + 1] = tmp;
+			}
+			x = 50;
+			system("cls");
+			for (int k = 0; k < 10; k++) {
+				Rectangle(hdc, x, y, x + dx, y - arr[k]);
+				x += dx;
+			}
+			Sleep(100);
+		}
+	}
+	for (int i = 0; i < 10; i++) {
+		printf("%d ", arr[i]);
+	}
+}
