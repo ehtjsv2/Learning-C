@@ -1,0 +1,18 @@
+#include<stdio.h>
+
+main() {
+	int arr[10] = { 12,11,19,6,18,8,12,4,3,19 };
+	int *min = &arr[0];
+	printf("[");
+	for (int i = 0; i < 10; i++) {
+		printf(" %d ", arr[i]);
+	}
+	printf("]\n");
+	for (int i = 1; i < 10; i++) {
+		printf("현재 min=%d\n", *min);
+		if (arr[i] < *min) {
+			min = &arr[i];
+		}
+	}
+	printf("최솟값은 %d입니다.\n", *min);
+}
