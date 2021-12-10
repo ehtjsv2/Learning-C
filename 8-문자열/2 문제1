@@ -1,0 +1,29 @@
+<문제>
+palindrome확인
+------------------------------------------------------------------------------------------------------------------------------------
+#include<stdio.h>
+#include<string.h>
+
+main() {
+	char voca[20];
+	char str1[20]="\0";
+	char str2[20]="\0";
+	int len;
+	while (1) { // 반복
+
+		printf("단어를 입력하십시오 : ");
+		gets_s(voca, 19);
+		//scanf(" %s", voca);
+		//printf("%c", voca[0]);
+		if (voca[0] == '\0')break;
+		len = strlen(voca); // voca의 문자열길이를 확인
+		for (int i = 0; i < len / 2 ; i++) {
+			str1[i] = voca[i]; // 앞에서부터 복사 
+			str2[i] = voca[len - i - 1]; // 뒤에서부터 str2의 앞에 복사
+		}
+		if (strcmp(str1, str2) == 0) {
+			printf("앞뒤가 똑같습니다.\n");
+		}
+		else printf("앞뒤가 다릅니다.\n");
+	}
+}
