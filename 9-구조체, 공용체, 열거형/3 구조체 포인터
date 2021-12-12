@@ -1,0 +1,31 @@
+<배운점>
+-포인터
+student *p=&a;
+이런식으로도 쓰이지만 
+나중에 많이쓰이는 것은 밑의 코드의
+메모리 동적할당과 같이쓰는
+student* person = (student*)malloc(sizeof(student));
+이런형식이다.
+
+-'.'연산자와 '->'연산자
+p->name 연산자는 (*p).name과 같다. 
+*p.name을 안하도록 유의할것. '.'연산자가 *p보다 우선순위이기때문이다.
+---------------------------------
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+
+main() {
+	typedef struct student {
+		int number;
+		char name[10];
+		double grade;
+	}student;
+	student* person = (student*)malloc(sizeof(student));
+	person->number = 1;
+	strcpy(person->name, "kim");
+	person->grade = 4.2;
+	
+	printf("%d %s %lf", person->number, person->name, person->grade);
+
+}
