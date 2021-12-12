@@ -2,3 +2,32 @@
 
 -열거형이란?
 변수가 가질 수 있는 값들을 미리 열거해놓은 자료형이다.
+또한 정수형 상수에 이름을 붙여 저장가능하다.
+
+-정수형상수
+정수형 상수에 이름을 붙여저장가능한데,
+상수를 선언해주지않으면 0부터 순차적으로+1씩 되어있다.
+다음항의 정수는 이전항의 +1이다.
+따라서 어떤항에 정수를 선언해주면 그 다음항은 이전항의+1 이 된다.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+<코드>
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+
+enum days { MON, TUE, MED, THU, FRI, SAT, SUN };
+
+enum day { MO=1, TU, ME=5, TH, FR, SA, SU };
+
+main() {
+	enum days week;
+	enum day week2;
+	enum day week3;
+	week = TUE;
+	week2 = TU;
+	week3 = TH;
+	printf("%d\n", week); //1
+	printf("%d\n", week2); //2
+	printf("%d\n", week3); //6
+}
