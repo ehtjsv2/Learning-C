@@ -1,0 +1,45 @@
+<배운점>
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+<코드>
+#include<stdio.h>
+#include<string.h>
+#include<string.h>
+
+main() {
+	struct student {
+		int nunmber;
+		char name[10];
+		double grade;
+	};
+	struct student a;
+	struct student b={ 24, "Lee", 3.1 };
+	
+	a.nunmber = 10;`
+	strcpy(a.name, "kim");
+	a.grade = 4.3;
+
+	printf("%d %s %lf\n", a.nunmber, a.name, a.grade);
+	printf("%d %s %lf\n", b.nunmber, b.name, b.grade);
+	
+	b = a;
+	printf("%d %s %lf\n", a.nunmber, a.name, a.grade);
+	printf("%d %s %lf\n", b.nunmber, b.name, b.grade);
+
+	/*
+	if (a == b) { // 이렇게 하면안됨
+		printf("a와 b는 같습니다.");
+	}
+	*/
+	if (a.name == b.name) { // 이렇게 구조체 변수안의 멤버마다 별도로 비교수식을 해주어야함.
+		printf("a와 b의 이름은 같습니다.\n");
+	}
+	else printf("다름\n");
+}
+--------------------------------------------------------------------------------------------------------------------------------------------
+<출력>
+10 kim 4.300000
+24 Lee 3.100000
+10 kim 4.300000
+10 kim 4.300000
+다름
