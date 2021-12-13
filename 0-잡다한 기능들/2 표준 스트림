@@ -1,0 +1,16 @@
+-표준 입력
+fscanf("stdin",%d,&a); 형식이다.
+
+-표준 출력
+fprintf("stdout",%s,message); 형식이며
+printf()를 쓸때 자연스레 stdout을 사용하게 되어있다.
+
+-표준 오류
+fprintf("stderr".&s,message); 형식이며
+오류메세지 출력을 위한 스트림이다.
+
+-stdout 과 stderr의 차이
+두가지를 사용하면 모니터에 출력되는 것은 똑같다.
+하지만 큰 차이점은 stdout은 버퍼가 있는것이다.
+stdout은 한줄단위로 출력하지만
+stderr는 버퍼링 없이 바로출력된다.
