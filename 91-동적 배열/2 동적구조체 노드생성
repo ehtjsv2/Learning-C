@@ -1,0 +1,38 @@
+<배운점>
+문제풀이 하면서 많이 해봤으니 딱히 적지않겠다.
+-----------------------------------------------------------------------------------------------------------------------
+<코드>
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+
+typedef struct Node {
+	int vertex;
+	struct Node* link;
+}Node;
+
+Node* CreatNode() {
+	Node* newnode = NULL;
+	newnode = (Node*)malloc(sizeof(Node));
+	newnode->link = NULL;
+	return newnode;
+}
+
+main() {
+	Node* node1 = NULL;
+	Node* node2 = NULL;
+	Node* p = NULL;
+	node1 = CreatNode();
+	node2 = CreatNode();
+	node1->vertex = 1;
+	node1->link = node2;
+	node2->vertex = 2;
+	p = node1;
+	while (p != NULL) {
+		printf("%d ->", p->vertex);
+		p = p->link;
+	}
+}
+--------------------------------------------------------------------------------------------------------------------------
+<출력>
+1 ->2 ->
