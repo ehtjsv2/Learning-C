@@ -5,8 +5,8 @@ scanf가 안전하지 않은 이유는 scanf가 받을 수 있는 입력 데이�
 초과된 데이터가 다른 메모리를 침범해 프로그램에 오류가 발생할 수 있기 때문.
 
 -scanf() 오류 해결
-#define _CRT_SECURE_NO_WARNINGS 를 코드 최상단에 써준다.
-scanf_s를 써준다
+#define _CRT_SECURE_NO_WARNINGS 를 코드 최상단에 써준다. 또는,
+scanf_s()를 써준다
 
 -scanf_s()
 해당 현상은 비주얼 스튜디오에서만 뜨는 오류다. 
